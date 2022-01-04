@@ -1,0 +1,26 @@
+version: "2"
+
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 3000:3000
+    user: "104"
+    environment:
+      - VIRTUAL_HOST=grafana.example.com
+      - VIRTUAL_PORT=3000
+      - HTTPS_METHOD=noredirect
+      - GF_SECURITY_ADMIN_PASSWORD=abcd1234
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - DS__VICTORIAMETRICS=Prometheus
+
+    volumes:
+      - ./grafana-data:/var/lib/grafana
+      - ./config/provisioning/:/etc/grafana/provisioning/
+volumes:
+    grafana_data: {}
+networks:
+  default:
+    external:
+      name: proxy
