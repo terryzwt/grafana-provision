@@ -14,6 +14,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=abcd1234
       - GF_USERS_ALLOW_SIGN_UP=false
       - DS__VICTORIAMETRICS=Prometheus
+      - GF_USERS_DEFAULT_THEME=light
 
     volumes:
       - ./grafana-data:/var/lib/grafana
