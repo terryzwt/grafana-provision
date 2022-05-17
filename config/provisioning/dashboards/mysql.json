@@ -4755,7 +4755,7 @@
     "type": "timepicker"
   },
   "timezone": "browser",
-  "title": "MySQL 监控",
+  "title": "MySQL监控",
   "uid": "MQWgroiiz",
   "version": 1,
   "description": "Dashboard from Percona Monitoring and Management project. "
